@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Survey</title>
+    <style type="text/css">
+        .form-control {
+            text-align: left;
+            margin-bottom: 25px;
+        }
+
+        .form-control input,
+        .form-control select {
+            display: block;
+            padding: 10px;
+            width: 95%;
+        }
+
+        form {
+            margin: 50px auto;
+            padding: 30px 30px;
+            max-width: 450px;
+        }
+
+        button {
+            display: block;
+            padding: 10px 10px;
+            width: 100%;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1 style="text-align: center;">Survey Page</h1>
+        <form style="text-align: center;">
+        <fieldset>
+            <div class="form-control">
+                <label style="display: block; margin-bottom: 10px;">Name</label>
+                <input type="text" name="Name" placeholder="Enter your name">
+            </div>
+
+            <div class="form-control">
+                <label style="display: block; margin-bottom: 10px;">Email</label>
+                <input type="text" name="Email" placeholder="Enter your email">
+            </div>
+
+            <div class="form-control">
+                <label style="display: block; margin-bottom: 10px;">Age</label>
+                <input type="text" name="Age" placeholder="Enter your age">
+            </div>
+
+            <div class="form-control">
+                <label style="display: block; margin-bottom: 10px;">Are you a student?</label>
+                <select>
+                    <option></option>
+                    <option>Yes</option>
+                    <option>No</option>
+                </select>
+            </div>
+
+            <button type="submit">Submit</button>
+        </fieldset>
+        </form>
+    </div>
+</body>
+</html>
