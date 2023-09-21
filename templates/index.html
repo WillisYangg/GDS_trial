@@ -2,6 +2,16 @@
 <html lang="en">
 <head>
     <title>Survey</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#student").on('change', function(){
+                $(".not_student").hide();
+                alert($(this).val());
+                $("#"+$(this).val()).fadeIn(700);
+            }).change();
+        })
+    </script>
     <style type="text/css">
         .form-control {
             text-align: left;
@@ -51,11 +61,28 @@
 
             <div class="form-control">
                 <label style="display: block; margin-bottom: 10px;">Are you a student?</label>
-                <select>
+                <select  id="student">
                     <option></option>
                     <option>Yes</option>
                     <option>No</option>
                 </select>
+            </div>
+
+            <div id="No" class="not_student" style="display: none;">
+                <div class="form-control">
+                    <label style="display: block; margin-bottom: 10px;">Occupation</label>
+                    <input type="text" name="Occupation" placeholder="Enter your occupation">
+                </div>
+
+                <div class="form-control">
+                    <label style="display: block; margin-bottom: 10px;">Years of Experience</label>
+                    <input type="text" name="Years of Experience" placeholder="Enter your years of experience">
+                </div>
+
+                <div class="form-control">
+                    <label style="display: block; margin-bottom: 10px;">Salary</label>
+                    <input type="text" name="Salary" placeholder="Enter your salary">
+                </div>
             </div>
 
             <button type="submit">Submit</button>
