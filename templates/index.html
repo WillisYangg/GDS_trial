@@ -7,7 +7,6 @@
         $(document).ready(function(){
             $("#student").on('change', function(){
                 $(".not_student").hide();
-                alert($(this).val());
                 $("#"+$(this).val()).fadeIn(700);
             }).change();
         })
@@ -42,21 +41,21 @@
 <body>
     <div>
         <h1 style="text-align: center;">Survey Page</h1>
-        <form style="text-align: center;">
+        <form style="text-align: center;" id="surveyform">
         <fieldset>
             <div class="form-control">
                 <label style="display: block; margin-bottom: 10px;">Name</label>
-                <input type="text" name="Name" placeholder="Enter your name">
+                <input type="text" name="Name" id="name" placeholder="Enter your name">
             </div>
 
             <div class="form-control">
                 <label style="display: block; margin-bottom: 10px;">Email</label>
-                <input type="text" name="Email" placeholder="Enter your email">
+                <input type="text" name="Email" id="email" placeholder="Enter your email">
             </div>
 
             <div class="form-control">
                 <label style="display: block; margin-bottom: 10px;">Age</label>
-                <input type="text" name="Age" placeholder="Enter your age">
+                <input type="text" name="Age" id="age" placeholder="Enter your age">
             </div>
 
             <div class="form-control">
@@ -71,17 +70,17 @@
             <div id="No" class="not_student" style="display: none;">
                 <div class="form-control">
                     <label style="display: block; margin-bottom: 10px;">Occupation</label>
-                    <input type="text" name="Occupation" placeholder="Enter your occupation">
+                    <input type="text" name="Occupation" id="occupation" placeholder="Enter your occupation">
                 </div>
 
                 <div class="form-control">
                     <label style="display: block; margin-bottom: 10px;">Years of Experience</label>
-                    <input type="text" name="Years of Experience" placeholder="Enter your years of experience">
+                    <input type="text" name="Years of Experience" id="YOE" placeholder="Enter your years of experience">
                 </div>
 
                 <div class="form-control">
                     <label style="display: block; margin-bottom: 10px;">Salary</label>
-                    <input type="text" name="Salary" placeholder="Enter your salary">
+                    <input type="text" name="Salary" id="salary" placeholder="Enter your salary">
                 </div>
             </div>
 
@@ -89,5 +88,24 @@
         </fieldset>
         </form>
     </div>
+    <script>
+        const form = document.getElementById('surveyform'); 
+
+        form.addEventListener("submit", (e)=>{
+
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const age = document.getElementById('age').value;
+            const student = document.getElementById('student').value;
+            const occupation = document.getElementById('occupation').value;
+            const yoe = document.getElementById('YOE').value;
+            const salary = document.getElementById('salary').value;
+
+            console.log(name,email,age,student,occupation,yoe,salary);
+
+            form.reset();
+        })
+    </script>
 </body>
 </html>
